@@ -7,8 +7,8 @@ buildscript {
         OSSRH_PASSWORD = project.properties['OSSRH_PASSWORD'] ?: System.getenv('OSSRH_PASSWORD')
     }
     repositories {
+        mavenCentral()
         google()
-        jcenter()
         maven { url 'https://plugins.gradle.org/m2/' }
     }
     dependencies {
@@ -22,8 +22,8 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         google()
-        jcenter()
     }
 }
 
@@ -77,7 +77,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.activity:activity-ktx:1.1.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.4.10.2")
+    dokkaHtmlPlugin 'org.jetbrains.dokka:kotlin-as-java-plugin:1.4.10.2'
 }
 
 dokkaHtml.configure {
